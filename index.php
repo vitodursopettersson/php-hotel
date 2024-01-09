@@ -74,8 +74,17 @@ $hotels = [
                     echo "<tr>";
                     echo "<th scope=\"row\">$index_hotel</th>";
 
-                    foreach ($hotel as $hotel_info) {
-                        echo "<td>$hotel_info</td>";
+                    foreach ($hotel as $hotel_info_key => $hotel_info) {
+
+                        if ($hotel_info_key == 'parking') {
+                            if ($hotel_info == true) {
+                                echo "<td>✅</td>";
+                            } else {
+                                echo "<td>❌</td>";
+                            }
+                        } else {
+                            echo "<td>$hotel_info</td>";
+                        }
                     };
                 }
                 ?>
