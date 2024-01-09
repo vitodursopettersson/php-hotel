@@ -61,16 +61,15 @@ $hotels = [
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">name</th>
-                    <th scope="col">description</th>
-                    <th scope="col">parking</th>
-                    <th scope="col">vote</th>
-                    <th scope="col">distance to center</th>
+                    <?php
+                    foreach ($hotels[0] as $title => $info) {
+                        echo "<th scope=\"col\">$title</th>";
+                    };
+                    ?>
                 </tr>
             </thead>
             <tbody>
                 <?php
-
                 foreach ($hotels as $index_hotel => $hotel) {
                     echo "<tr>";
                     echo "<th scope=\"row\">$index_hotel</th>";
@@ -79,7 +78,6 @@ $hotels = [
                         echo "<td>$hotel_info</td>";
                     };
                 }
-
                 ?>
             </tbody>
         </table>
