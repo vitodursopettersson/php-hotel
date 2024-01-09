@@ -55,16 +55,35 @@ $hotels = [
 <body>
 
     <!-- Lista Hotel -->
-    <?php
-    foreach ($hotels as $hotel) {
-        foreach ($hotel as $hotel_info_key => $hotel_info) {
-            echo "$hotel_info_key : $hotel_info";
-            echo "<br>";
-        };
-        echo "<hr>";
-    }
+    <div class="col-8 mx-auto mt-4">
 
-    ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">description</th>
+                    <th scope="col">parking</th>
+                    <th scope="col">vote</th>
+                    <th scope="col">distance to center</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+
+                foreach ($hotels as $index_hotel => $hotel) {
+                    echo "<tr>";
+                    echo "<th scope=\"row\">$index_hotel</th>";
+
+                    foreach ($hotel as $hotel_info) {
+                        echo "<td>$hotel_info</td>";
+                    };
+                }
+
+                ?>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 
