@@ -50,6 +50,18 @@ $hotels = [
 
 <body>
 
+    <!-- Lista Hotel -->
+    <?php
+    foreach ($hotels as $hotel) {
+        foreach ($hotel as $hotel_info_key => $hotel_info) {
+            echo "$hotel_info_key : $hotel_info";
+            echo "<br>";
+        };
+        echo "<hr>";
+    }
+
+    ?>
+
 </body>
 
 </html>
